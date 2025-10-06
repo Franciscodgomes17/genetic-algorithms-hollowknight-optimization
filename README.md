@@ -20,21 +20,25 @@ Developed as the **Final Project for Optimization Algorithms (NOVA IMS, 2024)**.
 ## Repository Structure
 
 ~~~text
-.
-├─ src/
-│  ├─ main.py                # final GA implementation (ready to run with dataset)
-│  ├─ operators.py           # custom crossover and mutation operators
-│  ├─ selection.py           # selection algorithms
-│  ├─ utils.py               # helper functions
-├─ notebooks/
-│  └─ experiments.ipynb      # exploratory GA runs and analysis
-├─ data/
-│  └─ example_dataset.csv    # example valid dataset (Geo gains/losses matrix)
-├─ docs/
-│  └─ OA_finalproject_2024.pdf   # project report
-├─ requirements.txt
-├─ README.md
-└─ LICENSE
+OA Project - final/
+├─ main.py                      # run the final GA (plug your matrix here)
+├─ gridsearch.py                # grid search across operators/hyperparams
+├─ best_fit_plot.png            # sample fitness curve output
+├─ algorithm/
+│  ├─ algorithm.py              # GA driver (evolution loop, logging, plotting)
+│  └─ utils.py                  # elitism helpers, elites-N, etc.
+├─ base/
+│  ├─ individuals.py            # constraints, route representation, fitness/gain
+│  ├─ population.py             # population init + batch fitness
+│  └─ data.py                   # helper to generate a valid Geo matrix (demo)
+├─ operators/
+│  ├─ crossovers.py             # cycle, PMX, uniform (and helper functions)
+│  ├─ mutators.py               # swap, inversion, scramble, insertion, displacement
+│  └─ selectors.py              # roulette (max), ranking, tournament, linear/exponential rank
+├─ log/
+│  └─ test_log.csv              # sample log output
+└─ docs/ (optional in your repo)
+   └─ OA_finalproject_2024.pdf  # project brief
 ~~~
 
 ---
